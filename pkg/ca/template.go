@@ -74,6 +74,35 @@ func (tc *TemplateConfig) NewCertificateTemplate(names ...string) *x509.Certific
 	return tpl
 }
 
+// NewCATemplate generates the template to create a new CA,
+// based on the information on the Issuer field.
+func (tc *TemplateConfig) NewCATemplate(skid []byte) *x509.Certificate {
+	duration := core.IIf(tc.Duration > 0, tc.Duration, DefaultCADuration)
+	from := time.Now()
+	until := from.Add(duration)
+
+	tpl := &x509.Certificate{
+		SerialNumber: RandomSerialNumber(),
+		Subject: pkix.Name{
+			Organization:       []string{tc.O},
+			OrganizationalUnit: []string{tc.OU},
+			CommonName:         tc.CN,
+		},
+		SubjectKeyId: skid,
+
+		NotBefore: from,
+		NotAfter:  until,
+
+		KeyUsage: x509.KeyUsageCertSign,
+
+		BasicConstraintsValid: true,
+		IsCA:                  true,
+		MaxPathLenZero:        true,
+	}
+
+	return tpl
+}
+
 func (*TemplateConfig) asIPAddress(h string) (net.IP, bool) {
 	if ip, err := core.ParseNetIP(h); err == nil {
 		return ip, true

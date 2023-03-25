@@ -27,10 +27,13 @@ const (
 )
 
 const (
-	Day = 24 * time.Hour // Day is 24 hours
+	Day  = 24 * time.Hour // Day is 24 hours
+	Year = 365 * Day      // Year is 365 days
 
 	// DefaultCertificateDuration is 90 days
 	DefaultCertificateDuration = 90 * Day
+	// DefaultCADuration is 10 years
+	DefaultCADuration = 10 * Year
 )
 
 // Config describes how the [CA] will operate
@@ -61,6 +64,51 @@ func (cfg Config) LoadCA(key x509utils.PrivateKey, certs []*x509.Certificate) (*
 
 	if !ca.validate() {
 		err := errors.New("incompatible pair provided")
+		return nil, err
+	}
+
+	return ca, nil
+}
+
+// NewCA generates a new self-signed CA using the provided TemplateConfig
+func (cfg Config) NewCA(tc *TemplateConfig) (*CA, error) {
+	// New CA Private Key
+	key, err := cfg.GenerateKey(true)
+	if err != nil {
+		err = core.Wrap(err, "failed to generate certificate key")
+		return nil, err
+	}
+
+	// SubjectKeyID
+	pub := key.Public()
+	skid, err := x509utils.SubjectPublicKeySHA1(pub)
+	if err != nil {
+		return nil, err
+	}
+
+	// New CA Certificate
+	tpl := tc.NewCATemplate(skid[:])
+
+	certDER, err := x509.CreateCertificate(rand.Reader, tpl, tpl, pub, key)
+	if err != nil {
+		err = core.Wrap(err, "failed to generate certificate")
+		return nil, err
+	}
+
+	cert, err := x509.ParseCertificate(certDER)
+	if err != nil {
+		err = core.Wrap(err, "failed to parse generated certificate")
+		return nil, err
+	}
+
+	ca := &CA{
+		cfg:    cfg,
+		caKey:  key,
+		caCert: []*x509.Certificate{cert},
+	}
+
+	if !ca.validate() {
+		err = errors.New("incompatible pair created")
 		return nil, err
 	}
 
