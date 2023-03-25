@@ -3,6 +3,7 @@ package ca
 
 import (
 	"crypto/x509"
+	"io"
 
 	"github.com/darvaza-proxy/darvaza/shared/x509utils"
 )
@@ -23,6 +24,26 @@ func (ca *CA) ECDSA() bool {
 // GenerateKey generates a new PrivateKey for a Server
 func (ca *CA) GenerateKey() (x509utils.PrivateKey, error) {
 	return ca.cfg.GenerateKey(false)
+}
+
+// WriteKey writes the CA's Private Key PEM encoded
+func (ca *CA) WriteKey(w io.Writer) (int64, error) {
+	return x509utils.WriteKey(w, ca.caKey)
+}
+
+// WriteCert writes the CA's Certificate PEM encoded
+func (ca *CA) WriteCert(w io.Writer) (int64, error) {
+	var count int64
+	for _, crt := range ca.caCert {
+		n, err := x509utils.WriteCert(w, crt)
+		if n > 0 {
+			count += n
+		}
+		if err != nil {
+			return count, err
+		}
+	}
+	return count, nil
 }
 
 func (ca *CA) validate() bool {
