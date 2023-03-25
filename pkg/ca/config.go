@@ -5,6 +5,7 @@ import (
 	"crypto/elliptic"
 	"crypto/rand"
 	"crypto/rsa"
+	"time"
 
 	"github.com/darvaza-proxy/core"
 	"github.com/darvaza-proxy/darvaza/shared/x509utils"
@@ -20,6 +21,13 @@ const (
 	KeyAlgorithmRSA
 	// KeyAlgorithmECDSA uses ECDSA 256 for either CA or server
 	KeyAlgorithmECDSA
+)
+
+const (
+	Day = 24 * time.Hour // Day is 24 hours
+
+	// DefaultCertificateDuration is 90 days
+	DefaultCertificateDuration = 90 * Day
 )
 
 // Config describes how the [CA] will operate
