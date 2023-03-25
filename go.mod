@@ -6,6 +6,7 @@ require (
 	github.com/darvaza-proxy/core v0.7.3
 	github.com/darvaza-proxy/darvaza/shared v0.4.11
 	github.com/mgechev/revive v1.3.1
+	golang.org/x/exp v0.0.0-20230321023759-10a507213a29
 )
 
 require (
