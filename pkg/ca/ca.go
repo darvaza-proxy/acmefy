@@ -5,12 +5,16 @@ import (
 	"crypto/x509"
 	"io"
 
+	"github.com/darvaza-proxy/core"
+	"github.com/darvaza-proxy/darvaza/shared/storage/certpool"
+	"github.com/darvaza-proxy/darvaza/shared/storage/simple"
 	"github.com/darvaza-proxy/darvaza/shared/x509utils"
 )
 
 // CA is a basic Certificate Authority
 type CA struct {
-	cfg Config
+	cfg  Config
+	pool *simple.Store
 
 	caKey  x509utils.PrivateKey
 	caCert []*x509.Certificate
@@ -61,4 +65,23 @@ func (ca *CA) validate() bool {
 
 	// TODO: validate ca.caCert chain
 	return ok
+}
+
+func (ca *CA) prepare() (*CA, error) {
+	var pb certpool.PoolBuffer
+
+	pb.AddKey("", ca.caKey)
+	for _, c := range ca.caCert {
+		pb.AddCert("", c)
+	}
+
+	pool, err := simple.NewFromBuffer(&pb, nil)
+	if err != nil {
+		err = core.Wrap(err, "failed to create certificate store")
+		return nil, err
+	}
+
+	// done
+	ca.pool = pool
+	return ca, nil
 }
