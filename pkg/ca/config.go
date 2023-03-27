@@ -2,6 +2,7 @@ package ca
 
 import (
 	"crypto/ecdsa"
+	"crypto/ed25519"
 	"crypto/elliptic"
 	"crypto/rand"
 	"crypto/rsa"
@@ -24,6 +25,8 @@ const (
 	KeyAlgorithmRSA
 	// KeyAlgorithmECDSA uses ECDSA 256 for either CA or server
 	KeyAlgorithmECDSA
+	// KeyAlgorithmED25519 uses ED25519 for either CA or server
+	KeyAlgorithmED25519
 )
 
 const (
@@ -48,6 +51,9 @@ func (cfg *Config) GenerateKey(rootCA bool) (x509utils.PrivateKey, error) {
 	switch cfg.KeyAlgorithm {
 	case KeyAlgorithmECDSA:
 		return ecdsa.GenerateKey(elliptic.P256(), rand.Reader)
+	case KeyAlgorithmED25519:
+		_, key, err := ed25519.GenerateKey(rand.Reader)
+		return key, err
 	default:
 		bits := core.IIf(rootCA, 3072, 2048)
 		return rsa.GenerateKey(rand.Reader, bits)
