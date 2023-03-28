@@ -24,6 +24,22 @@ type TemplateConfig struct {
 	Duration time.Duration
 }
 
+// SetDefaults uses itself to set default values to a target [TemplateConfig]
+func (tc TemplateConfig) SetDefaults(target *TemplateConfig) {
+	if target.O == "" {
+		target.O = tc.O
+	}
+	if target.OU == "" {
+		target.OU = tc.OU
+	}
+	if target.CN == "" {
+		target.CN = tc.CN
+	}
+	if target.Duration == 0 {
+		target.Duration = tc.Duration
+	}
+}
+
 // revive:disable:cognitive-complexity
 
 // NewCertificateTemplate creates a Certificate Template for a list of names.
