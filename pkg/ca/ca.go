@@ -21,6 +21,11 @@ func (ca *CA) ECDSA() bool {
 	return ca.cfg.KeyAlgorithm == KeyAlgorithmECDSA
 }
 
+// ED25519 tells if certificates should be ED25519 instead of RSA
+func (ca *CA) ED25519() bool {
+	return ca.cfg.KeyAlgorithm == KeyAlgorithmED25519
+}
+
 // GenerateKey generates a new PrivateKey for a Server
 func (ca *CA) GenerateKey() (x509utils.PrivateKey, error) {
 	return ca.cfg.GenerateKey(false)
