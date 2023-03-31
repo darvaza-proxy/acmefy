@@ -44,6 +44,9 @@ type Config struct {
 	// KeyAlgorithm specifies the algorithm to use when
 	// generating a PrivateKey. Defaults to RSA.
 	KeyAlgorithm KeyAlgorithm
+
+	// Template is used to create new certificates
+	Template TemplateConfig
 }
 
 // GenerateKey generates a new PrivateKey
@@ -73,7 +76,7 @@ func (cfg Config) LoadCA(key x509utils.PrivateKey, certs []*x509.Certificate) (*
 		return nil, err
 	}
 
-	return ca, nil
+	return ca.prepare()
 }
 
 // NewCA generates a new self-signed CA using the provided TemplateConfig
@@ -118,5 +121,5 @@ func (cfg Config) NewCA(tc *TemplateConfig) (*CA, error) {
 		return nil, err
 	}
 
-	return ca, nil
+	return ca.prepare()
 }
