@@ -5,8 +5,8 @@ import (
 	"crypto/rand"
 	"crypto/x509"
 
-	"github.com/darvaza-proxy/core"
-	"github.com/darvaza-proxy/darvaza/shared/x509utils"
+	"darvaza.org/core"
+	"darvaza.org/darvaza/shared/x509utils"
 )
 
 // revive:disable:flag-parameter

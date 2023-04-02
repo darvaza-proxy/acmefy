@@ -6,9 +6,9 @@ import (
 	"crypto/x509"
 	"encoding/pem"
 
-	"github.com/darvaza-proxy/core"
-	"github.com/darvaza-proxy/darvaza/shared/storage"
-	"github.com/darvaza-proxy/darvaza/shared/x509utils"
+	"darvaza.org/core"
+	"darvaza.org/darvaza/shared/storage"
+	"darvaza.org/darvaza/shared/x509utils"
 )
 
 var (

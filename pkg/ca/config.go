@@ -10,8 +10,8 @@ import (
 	"errors"
 	"time"
 
-	"github.com/darvaza-proxy/core"
-	"github.com/darvaza-proxy/darvaza/shared/x509utils"
+	"darvaza.org/core"
+	"darvaza.org/darvaza/shared/x509utils"
 	"golang.org/x/exp/slices"
 )
 

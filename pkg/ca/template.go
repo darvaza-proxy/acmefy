@@ -10,7 +10,7 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/darvaza-proxy/core"
+	"darvaza.org/core"
 )
 
 // TemplateConfig describes the details to compose a new

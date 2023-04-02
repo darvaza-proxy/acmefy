@@ -5,10 +5,10 @@ import (
 	"crypto/x509"
 	"io"
 
-	"github.com/darvaza-proxy/core"
-	"github.com/darvaza-proxy/darvaza/shared/storage/certpool"
-	"github.com/darvaza-proxy/darvaza/shared/storage/simple"
-	"github.com/darvaza-proxy/darvaza/shared/x509utils"
+	"darvaza.org/core"
+	"darvaza.org/darvaza/shared/storage/certpool"
+	"darvaza.org/darvaza/shared/storage/simple"
+	"darvaza.org/darvaza/shared/x509utils"
 )
 
 // CA is a basic Certificate Authority
