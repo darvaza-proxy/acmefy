@@ -1,7 +1,9 @@
 darvaza.org/core v0.9.0 h1:3Vkmhr5n5/cQ89BpjWwQArqt3QdCRcEUc6F3Tnb7Dus=
 darvaza.org/core v0.9.0/go.mod h1:QyzYp1eWsgHJIHyaRZcLSc2LLjCvLFugHXfZLWD9JNU=
-darvaza.org/darvaza/shared v0.5.0 h1:4mvF/X7Sx+hGflcLgrkiE6CZBVl/0qhdTSExbk5BSgI=
-darvaza.org/darvaza/shared v0.5.0/go.mod h1:Tjq+N1u/7BbBDaXlSPzw++Ub9O4jpPY6nwQ/hps6paA=
+darvaza.org/darvaza/shared v0.5.1 h1:HQ4KX2YDeo7x794kIQjR2sNblsLRMOHBgyhlYN9via4=
+darvaza.org/darvaza/shared v0.5.1/go.mod h1:Tjq+N1u/7BbBDaXlSPzw++Ub9O4jpPY6nwQ/hps6paA=
+darvaza.org/darvaza/shared/web v0.3.5 h1:Ykfwlc8clhN6wHv0stF5HizvUs8sTOwDtWu7eODuTyI=
+darvaza.org/darvaza/shared/web v0.3.5/go.mod h1:v0rV8Xo+fCwVWt2OxMzYj5vpPjgmXZbvk9COs6FO/gQ=
 darvaza.org/slog v0.5.0 h1:hs8GPd04rpm0v3xhXexLYnLknrQ8cxguPQZtw/F8Qkk=
 darvaza.org/slog v0.5.0/go.mod h1:Qk9S2DX8Uk38TtBqAJasaL9MSGozD5F3AyVcVCTGMW0=
 github.com/BurntSushi/toml v1.2.1 h1:9F2/+DoOYIOksmaJFPw1tGFy1eDnIJXg+UHjuD8lTak=

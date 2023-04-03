@@ -4,7 +4,8 @@ go 1.19
 
 require (
 	darvaza.org/core v0.9.0
-	darvaza.org/darvaza/shared v0.5.0
+	darvaza.org/darvaza/shared v0.5.1
+	darvaza.org/darvaza/shared/web v0.3.5
 	github.com/mgechev/revive v1.3.1
 	golang.org/x/exp v0.0.0-20230321023759-10a507213a29
 )
