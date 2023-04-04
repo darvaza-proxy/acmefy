@@ -6,13 +6,12 @@ import (
 	"fmt"
 	"io"
 
-	"darvaza.org/darvaza/shared/web/respond"
 	"darvaza.org/darvaza/shared/x509utils"
 )
 
 func init() {
-	reg.Register("", respond.NewRenderer(ContentTypePEM, renderPEM))
-	reg.Register("", respond.NewRenderer(ContentTypeDERCA, renderDERCA))
+	register(ContentTypePEM, renderPEM)
+	register(ContentTypeDERCA, renderDERCA)
 }
 
 func renderPEM(w io.Writer, v any) error {

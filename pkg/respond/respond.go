@@ -10,6 +10,10 @@ func Registry() *respond.Registry {
 	return reg
 }
 
+func register(ct string, h respond.RenderFunc) {
+	reg.Register(ct, respond.NewRenderer(ct, h))
+}
+
 const (
 	// ContentTypePEM is the Content-Type for PEM encoded files
 	ContentTypePEM = "application/x-pem-file"
