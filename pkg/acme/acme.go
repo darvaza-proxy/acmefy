@@ -13,3 +13,25 @@ type Timestamp time.Time
 func (ts Timestamp) String() string {
 	return time.Time(ts).UTC().Format(time.RFC3339)
 }
+
+// LinkRelation indicates the relationship a link has to the current document
+type LinkRelation string
+
+const (
+	// LinkRelationUP is used with challenge resources to indicate
+	// the authorization resource to which a challenge belongs.  It is also
+	// used, with some media types, from certificate resources to indicate a
+	// resource from which the client may fetch a chain of CA certificates
+	// that could be used to validate the certificate in the original
+	// resource. (See https://www.rfc-editor.org/rfc/rfc8555#section-7.1)
+	LinkRelationUP LinkRelation = "up"
+
+	// LinkRelationIndex is present on all resources other than the
+	// directory and indicates the URL of the directory.
+	// (See https://www.rfc-editor.org/rfc/rfc8555#section-7.1)
+	LinkRelationIndex LinkRelation = "index"
+
+	// LinkRelationNext is present to indicate there are more entries on
+	// an orders list [§7.1.2.1]
+	LinkRelationNext LinkRelation = "next"
+)
