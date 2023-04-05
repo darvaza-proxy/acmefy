@@ -2,7 +2,10 @@ module darvaza.org/acmefy
 
 go 1.19
 
-require github.com/mgechev/revive v1.3.1
+require (
+	github.com/go-jose/go-jose/v3 v3.0.0
+	github.com/mgechev/revive v1.3.1
+)
 
 require (
 	github.com/BurntSushi/toml v1.2.1 // indirect
