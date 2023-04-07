@@ -3,6 +3,13 @@ module darvaza.org/acmefy/pkg/ca
 go 1.19
 
 replace (
+	darvaza.org/core => ../../../core
+	darvaza.org/darvaza/shared => ../../../darvaza/shared
+	darvaza.org/darvaza/shared/web => ../../../darvaza/shared/web
+	darvaza.org/resolver => ../../../resolver
+)
+
+replace (
 	darvaza.org/acmefy => ../..
 	darvaza.org/acmefy/pkg/respond => ../respond
 )

@@ -2,6 +2,12 @@ module darvaza.org/acmefy/pkg/respond
 
 go 1.19
 
+replace (
+	darvaza.org/core => ../../../core
+	darvaza.org/darvaza/shared => ../../../darvaza/shared
+	darvaza.org/darvaza/shared/web => ../../../darvaza/shared/web
+)
+
 replace darvaza.org/acmefy => ../../
 
 require (
