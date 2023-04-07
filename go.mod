@@ -2,6 +2,13 @@ module darvaza.org/acmefy
 
 go 1.19
 
+replace (
+	darvaza.org/core => ../core
+	darvaza.org/darvaza/shared => ../darvaza/shared
+	darvaza.org/darvaza/shared/web => ../darvaza/shared/web
+	darvaza.org/resolver => ../resolver
+)
+
 require (
 	github.com/go-jose/go-jose/v3 v3.0.0
 	github.com/mgechev/revive v1.3.2
