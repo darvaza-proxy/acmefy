@@ -6,16 +6,20 @@ import (
 	"fmt"
 	"io"
 
-	"darvaza.org/darvaza/shared/web/respond"
 	"darvaza.org/darvaza/shared/x509utils"
+
+	"darvaza.org/acmefy/pkg/acme"
 )
 
 func init() {
-	reg.Register("", respond.NewRenderer(ContentTypePEM, renderPEM))
-	reg.Register("", respond.NewRenderer(ContentTypeDERCA, renderDERCA))
+	register(acme.ContentTypePEMCertChain, RenderPEMCert)
+	register(acme.ContentTypePEM, RenderPEMCert)
+	register(acme.ContentTypeDERCA, RenderDERCert)
 }
 
-func renderPEM(w io.Writer, v any) error {
+// RenderPEMCert renders *x509.Certificate and []*x509.Certificate
+// PEM encoded
+func RenderPEMCert(w io.Writer, v any) error {
 	switch d := v.(type) {
 	case []*x509.Certificate:
 		return writePEMCert(w, d...)
@@ -36,18 +40,20 @@ func writePEMCert(w io.Writer, certs ...*x509.Certificate) error {
 	return nil
 }
 
-func renderDERCA(w io.Writer, v any) error {
+// RenderDERCert renders the raw DER in a *x509.Certificate
+// or the first entry on a []*x509.Certificate
+func RenderDERCert(w io.Writer, v any) error {
 	switch d := v.(type) {
 	case []*x509.Certificate:
-		return writerDERCACert(w, d[0].Raw)
+		return writerDERCert(w, d[0].Raw)
 	case *x509.Certificate:
-		return writerDERCACert(w, d.Raw)
+		return writerDERCert(w, d.Raw)
 	default:
 		return fmt.Errorf("invalid data type %T", v)
 	}
 }
 
-func writerDERCACert(w io.Writer, der []byte) error {
+func writerDERCert(w io.Writer, der []byte) error {
 	buf := bytes.NewBuffer(der)
 	_, err := buf.WriteTo(w)
 	return err
