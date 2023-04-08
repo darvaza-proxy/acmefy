@@ -9,7 +9,7 @@ replace (
 
 require (
 	darvaza.org/acmefy v0.4.1
-	darvaza.org/acmefy/pkg/respond v0.0.1
+	darvaza.org/acmefy/pkg/respond v0.1.0
 	darvaza.org/core v0.9.2
 	darvaza.org/darvaza/shared v0.5.1
 	golang.org/x/exp v0.0.0-20230321023759-10a507213a29
