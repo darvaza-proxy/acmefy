@@ -3,6 +3,7 @@ package ca
 import (
 	"net/http"
 
+	"darvaza.org/acmefy/pkg/acme"
 	"darvaza.org/acmefy/pkg/respond"
 )
 
@@ -19,6 +20,7 @@ func (ca *CA) ServeCertificate(rw http.ResponseWriter, req *http.Request) {
 
 var (
 	certResponder = respond.Registry().
-		Supports(respond.ContentTypePEM,
-			respond.ContentTypeDERCA)
+		Supports(acme.ContentTypePEMCertChain,
+			acme.ContentTypePEM,
+			acme.ContentTypeDERCA)
 )

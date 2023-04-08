@@ -7,11 +7,14 @@ import (
 	"io"
 
 	"darvaza.org/darvaza/shared/x509utils"
+
+	"darvaza.org/acmefy/pkg/acme"
 )
 
 func init() {
-	register(ContentTypePEM, renderPEM)
-	register(ContentTypeDERCA, renderDERCA)
+	register(acme.ContentTypePEMCertChain, renderPEM)
+	register(acme.ContentTypePEM, renderPEM)
+	register(acme.ContentTypeDERCA, renderDERCA)
 }
 
 func renderPEM(w io.Writer, v any) error {

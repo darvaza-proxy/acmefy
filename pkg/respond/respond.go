@@ -13,10 +13,3 @@ func Registry() *respond.Registry {
 func register(ct string, h respond.RenderFunc) {
 	reg.Register(ct, respond.NewRenderer(ct, h))
 }
-
-const (
-	// ContentTypePEM is the Content-Type for PEM encoded files
-	ContentTypePEM = "application/x-pem-file"
-	// ContentTypeDERCA is the Content-Type for DER encoded CA Certificates
-	ContentTypeDERCA = "application/x-x509-ca-cert"
-)
