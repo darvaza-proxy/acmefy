@@ -6,11 +6,6 @@ import (
 )
 
 var (
-	// ContentTypeProblem is the ContentType when rendering a Problem
-	ContentTypeProblem = "application/problem+json"
-)
-
-var (
 	_ interface {
 		Error() string
 		Errors() []error
