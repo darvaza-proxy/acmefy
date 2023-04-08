@@ -3,7 +3,10 @@
 // [RFC8555]: https://www.rfc-editor.org/rfc/rfc8555
 package acme
 
-import "time"
+import (
+	"fmt"
+	"time"
+)
 
 // Timestamp renders in the format defined in [RFC3339]
 //
@@ -35,3 +38,13 @@ const (
 	// an orders list [§7.1.2.1]
 	LinkRelationNext LinkRelation = "next"
 )
+
+// A Link is a Link HTTP header
+type Link struct {
+	URL      string
+	Relation LinkRelation
+}
+
+func (l Link) String() string {
+	return fmt.Sprintf("<%s>;rel=%s", l.URL, string(l.Relation))
+}
