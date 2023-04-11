@@ -22,4 +22,10 @@ const (
 	//
 	// [RFC8555]: https://www.rfc-editor.org/rfc/rfc8555
 	IdentifierDNS IdentifierType = "dns"
+
+	// IdentifierIP defined by [RFC8738] for authorizing
+	// IPv4 and IPv6 addresses
+	//
+	// [RFC8738]: https://www.rfc-editor.org/rfc/rfc8738
+	IdentifierIP IdentifierType = "ip"
 )
