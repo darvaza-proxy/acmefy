@@ -20,6 +20,7 @@ require (
 	github.com/olekukonko/tablewriter v0.0.5 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/rivo/uniseg v0.4.4 // indirect
+	github.com/stretchr/testify v1.8.4 // indirect
 	golang.org/x/sys v0.11.0 // indirect
 	golang.org/x/tools v0.12.0 // indirect
 )
