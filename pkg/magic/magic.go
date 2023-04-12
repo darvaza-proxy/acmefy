@@ -15,5 +15,6 @@ type Magic struct {
 	logger   slog.Logger
 	resolver resolver.Resolver
 
-	entrypoint string
+	entrypoint       string
+	forwardTLSALPN01 string
 }
