@@ -18,6 +18,8 @@ type Magic struct {
 	entrypoint string
 	logger     slog.Logger
 	resolver   resolver.Resolver
+
+	forwardTLSALPN01 string
 }
 
 // New creates a new Magic client with the provided
