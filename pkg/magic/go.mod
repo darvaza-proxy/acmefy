@@ -18,13 +18,16 @@ replace (
 )
 
 require (
+	darvaza.org/acmefy v0.4.2
 	darvaza.org/core v0.9.2
+	darvaza.org/darvaza/shared v0.5.1
 	darvaza.org/resolver v0.5.0
 	darvaza.org/slog v0.5.1
 	darvaza.org/slog/handlers/discard v0.4.0
 )
 
 require (
+	github.com/go-jose/go-jose/v3 v3.0.0 // indirect
 	github.com/miekg/dns v1.1.54 // indirect
 	golang.org/x/mod v0.10.0 // indirect
 	golang.org/x/net v0.10.0 // indirect
