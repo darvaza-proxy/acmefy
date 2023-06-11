@@ -133,6 +133,14 @@ $(gen_install_tools)"
 
 		fi
 
+		if [ "build" = "$cmd" ]; then
+			# special builf flags for cmd/*
+			#
+			callx="if \$(GO) list ./... | grep -e '.*/cmd/[^/]\+\$\$' > /dev/null; then \
+\$(GO_BUILD_CMD) ./...; else \
+\$(GO_BUILD) ./...; fi"
+		fi
+
 		if [ "tidy" = "$cmd" ]; then
 			exclude=$(gen_revive_exclude "$dir")
 			if [ -n "$exclude" ]; then
