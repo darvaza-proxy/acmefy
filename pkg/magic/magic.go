@@ -4,6 +4,7 @@ package magic
 import (
 	"sync"
 
+	"darvaza.org/darvaza/shared/storage/autocert"
 	"darvaza.org/resolver"
 	"darvaza.org/slog"
 )
@@ -14,6 +15,8 @@ type Magic struct {
 	mu       sync.Mutex
 	logger   slog.Logger
 	resolver resolver.Resolver
+
+	autocert.Store
 
 	entrypoint       string
 	forwardTLSALPN01 string
