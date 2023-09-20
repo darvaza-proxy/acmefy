@@ -12,7 +12,7 @@ require (
 	darvaza.org/acmefy/pkg/respond v0.1.1
 	darvaza.org/core v0.9.7
 	darvaza.org/darvaza/shared v0.5.8
-	golang.org/x/exp v0.0.0-20230713183714-613f0c0eb8a1
+	golang.org/x/exp v0.0.0-20230905200255-921286631fa9
 )
 
 require (
@@ -22,8 +22,8 @@ require (
 	github.com/go-jose/go-jose/v3 v3.0.0 // indirect
 	github.com/klauspost/cpuid/v2 v2.2.5 // indirect
 	github.com/zeebo/blake3 v0.2.3 // indirect
-	golang.org/x/net v0.14.0 // indirect
+	golang.org/x/net v0.15.0 // indirect
 	golang.org/x/sync v0.3.0 // indirect
-	golang.org/x/sys v0.11.0 // indirect
-	golang.org/x/text v0.12.0 // indirect
+	golang.org/x/sys v0.12.0 // indirect
+	golang.org/x/text v0.13.0 // indirect
 )
