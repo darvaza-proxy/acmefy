@@ -8,17 +8,17 @@ replace (
 )
 
 require (
-	darvaza.org/acmefy v0.4.3
+	darvaza.org/acmefy v0.4.4
 	darvaza.org/acmefy/pkg/respond v0.1.1
-	darvaza.org/core v0.9.7
-	darvaza.org/darvaza/shared v0.5.8
+	darvaza.org/core v0.9.9
+	darvaza.org/darvaza/shared v0.5.9
 	golang.org/x/exp v0.0.0-20230905200255-921286631fa9
 )
 
 require (
-	darvaza.org/darvaza/shared/web v0.3.9 // indirect
-	darvaza.org/slog v0.5.3 // indirect
-	darvaza.org/slog/handlers/discard v0.4.5 // indirect
+	darvaza.org/darvaza/shared/web v0.3.10 // indirect
+	darvaza.org/slog v0.5.4 // indirect
+	darvaza.org/slog/handlers/discard v0.4.6 // indirect
 	github.com/go-jose/go-jose/v3 v3.0.0 // indirect
 	github.com/klauspost/cpuid/v2 v2.2.5 // indirect
 	github.com/zeebo/blake3 v0.2.3 // indirect
