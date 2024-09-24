@@ -13,7 +13,7 @@ require github.com/go-jose/go-jose/v4 v4.0.4
 
 require (
 	golang.org/x/net v0.15.0 // indirect
-	golang.org/x/text v0.13.0 // indirect
+	golang.org/x/text v0.14.0 // indirect
 )
 
 replace darvaza.org/acmefy => ../../
