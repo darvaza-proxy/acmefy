@@ -51,6 +51,7 @@ func (ca *CA) newCertificate(_ context.Context,
 		crt, err = x509utils.BlockToCertificate(block)
 		return true
 	})
+
 	if err != nil {
 		err = core.Wrap(err, "failed to decode signed certificate")
 		return nil, err

@@ -75,9 +75,14 @@ func (ca *CA) validate() bool {
 func (ca *CA) prepare() (*CA, error) {
 	var pb certpool.PoolBuffer
 
-	_ = pb.AddKey("", ca.caKey)
+	if err := pb.AddKey("", ca.caKey); err != nil {
+		return nil, err
+	}
+
 	for _, c := range ca.caCert {
-		_ = pb.AddCert("", c)
+		if err := pb.AddCert("", c); err != nil {
+			return nil, err
+		}
 	}
 
 	pool, err := simple.NewFromBuffer(&pb, nil)
