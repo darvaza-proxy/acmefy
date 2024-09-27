@@ -12,7 +12,6 @@ import (
 
 	"darvaza.org/core"
 	"darvaza.org/darvaza/shared/x509utils"
-	"golang.org/x/exp/slices"
 )
 
 // KeyAlgorithm specifies the algorithm to use when generating a Private Key
@@ -68,7 +67,7 @@ func (cfg Config) LoadCA(key x509utils.PrivateKey, certs []*x509.Certificate) (*
 	ca := &CA{
 		cfg:    cfg,
 		caKey:  key,
-		caCert: slices.Clone(certs),
+		caCert: core.SliceCopy(certs),
 	}
 
 	if !ca.validate() {

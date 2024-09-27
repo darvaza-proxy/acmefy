@@ -13,8 +13,6 @@ require (
 	darvaza.org/x/web v0.8.6 // indirect
 )
 
-require golang.org/x/exp v0.0.0-20230905200255-921286631fa9
-
 require (
 	github.com/go-jose/go-jose/v4 v4.0.4 // indirect
 	github.com/gobwas/glob v0.2.3 // indirect
