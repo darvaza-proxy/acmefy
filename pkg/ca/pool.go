@@ -47,10 +47,11 @@ func (ca *CA) newCertificate(_ context.Context,
 		return nil, err
 	}
 
-	x509utils.ReadPEM(certPEM, func(_ string, block *pem.Block) bool {
+	_ = x509utils.ReadPEM(certPEM, func(_ string, block *pem.Block) bool {
 		crt, err = x509utils.BlockToCertificate(block)
 		return true
 	})
+
 	if err != nil {
 		err = core.Wrap(err, "failed to decode signed certificate")
 		return nil, err

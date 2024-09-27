@@ -12,9 +12,9 @@ func (ca *CA) ServeCertificate(rw http.ResponseWriter, req *http.Request) {
 	res, err := certResponder.WithRequest(req)
 	switch {
 	case err != nil:
-		res.BadRequest(rw).Render(err)
+		_ = res.BadRequest(rw).Render(err)
 	default:
-		res.OK(rw).Render(ca.caCert)
+		_ = res.OK(rw).Render(ca.caCert)
 	}
 }
 

@@ -11,5 +11,8 @@ func Registry() *respond.Registry {
 }
 
 func register(ct string, h respond.RenderFunc) {
-	reg.Register(ct, respond.NewRenderer(ct, h))
+	err := reg.Register(ct, respond.NewRenderer(ct, h))
+	if err != nil {
+		panic(err)
+	}
 }
