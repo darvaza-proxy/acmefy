@@ -10,7 +10,7 @@ require (
 	darvaza.org/x/web v0.8.6
 )
 
-require github.com/go-jose/go-jose/v3 v3.0.0
+require github.com/go-jose/go-jose/v4 v4.0.4
 
 require (
 	github.com/gobwas/glob v0.2.3 // indirect

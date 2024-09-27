@@ -1,6 +1,6 @@
 package acme
 
-import "github.com/go-jose/go-jose/v3/json"
+import "github.com/go-jose/go-jose/v4/json"
 
 // AccountStatus indicates the status of an account.
 // See [§7.1.6]

@@ -16,7 +16,7 @@ require (
 require golang.org/x/exp v0.0.0-20230905200255-921286631fa9
 
 require (
-	github.com/go-jose/go-jose/v3 v3.0.0 // indirect
+	github.com/go-jose/go-jose/v4 v4.0.4 // indirect
 	github.com/gobwas/glob v0.2.3 // indirect
 	github.com/klauspost/cpuid/v2 v2.2.8 // indirect
 	github.com/zeebo/blake3 v0.2.3 // indirect
