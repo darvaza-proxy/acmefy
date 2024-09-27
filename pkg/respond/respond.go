@@ -1,7 +1,7 @@
 // Package respond contains encoding/decoding helpers
 package respond
 
-import "darvaza.org/darvaza/shared/web/respond"
+import "darvaza.org/x/web/respond"
 
 var reg = respond.NewRegistry()
 
