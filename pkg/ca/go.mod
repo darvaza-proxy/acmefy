@@ -5,12 +5,12 @@ go 1.21
 require (
 	darvaza.org/acmefy v0.4.4
 	darvaza.org/acmefy/pkg/respond v0.1.2
-	darvaza.org/core v0.14.8
-	darvaza.org/darvaza/shared v0.6.0
-	darvaza.org/slog v0.5.10 // indirect
-	darvaza.org/slog/handlers/discard v0.4.13 // indirect
-	darvaza.org/x/fs v0.3.2 // indirect
-	darvaza.org/x/web v0.8.6 // indirect
+	darvaza.org/core v0.14.10
+	darvaza.org/darvaza/shared v0.6.1
+	darvaza.org/slog v0.5.11 // indirect
+	darvaza.org/slog/handlers/discard v0.4.14 // indirect
+	darvaza.org/x/fs v0.3.3 // indirect
+	darvaza.org/x/web v0.8.7 // indirect
 )
 
 require (
