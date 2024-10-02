@@ -4,7 +4,7 @@ go 1.21
 
 require (
 	darvaza.org/acmefy v0.4.5
-	darvaza.org/acmefy/pkg/respond v0.1.2
+	darvaza.org/acmefy/pkg/respond v0.2.0
 	darvaza.org/core v0.14.10
 	darvaza.org/darvaza/shared v0.6.1
 	darvaza.org/slog v0.5.11 // indirect
