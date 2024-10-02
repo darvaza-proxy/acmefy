@@ -1,9 +1,9 @@
 darvaza.org/core v0.14.10 h1:qUakYdmNGgkrpnP2Lg51kfSp9PRdXEwnsTDuAgrFQBo=
 darvaza.org/core v0.14.10/go.mod h1:KCXKssntfqEfuzJa6KMa7F1ShU/lYh1TKt2f4cmEdO0=
-darvaza.org/darvaza/shared v0.6.1 h1:gm3dGVmFuU69Xk/aJyijuMVadH7Ny7WAj+DoJUN7Mb0=
-darvaza.org/darvaza/shared v0.6.1/go.mod h1:T1SB0e//F1AOceE3WEhWUBegV6re8R1CWdEk8HPlXUY=
 darvaza.org/x/fs v0.3.3 h1:EXMgutKhk0fljRlDCkJb7RrbMJRhyfnO41h7bxchAFs=
 darvaza.org/x/fs v0.3.3/go.mod h1:BJBKXHolO5w7up9jqQLk8iLVtmubjUCx3Qp6K0aw9cg=
+darvaza.org/x/tls v0.2.1 h1:Zuw2LykUHSKlfQw+hlbS8M0RGuL27B5wufTXgY92NxI=
+darvaza.org/x/tls v0.2.1/go.mod h1:ojiB760hB5SJ5710vvgZn25QLTdKBrj0VTYwTaHPQdQ=
 darvaza.org/x/web v0.8.7 h1:DZZZ08b6yI52DnE5dOcxGdyVKPHZTRWSLRSlQXqYERA=
 darvaza.org/x/web v0.8.7/go.mod h1:hPUlDXU8Y03uaS19D+MGW4HBCk+6BWbOYxH4LufF4HM=
 github.com/go-jose/go-jose/v4 v4.0.4 h1:VsjPI33J0SB9vQM6PLmNjoHqMQNGPiZ0rHL7Ni7Q6/E=
