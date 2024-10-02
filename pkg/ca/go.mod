@@ -3,7 +3,7 @@ module darvaza.org/acmefy/pkg/ca
 go 1.21
 
 require (
-	darvaza.org/acmefy v0.4.4
+	darvaza.org/acmefy v0.4.5
 	darvaza.org/acmefy/pkg/respond v0.1.2
 	darvaza.org/core v0.14.10
 	darvaza.org/darvaza/shared v0.6.1
