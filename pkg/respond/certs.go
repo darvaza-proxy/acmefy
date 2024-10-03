@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"io"
 
-	"darvaza.org/darvaza/shared/x509utils"
+	"darvaza.org/x/tls/x509utils"
 
 	"darvaza.org/acmefy/pkg/acme"
 )

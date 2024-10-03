@@ -8,6 +8,8 @@ darvaza.org/slog/handlers/discard v0.4.14 h1:OQgPzqbzwXohPGlgGQ3/hVaOzjo7TGb8fRa
 darvaza.org/slog/handlers/discard v0.4.14/go.mod h1:27j2ZBzOy9ekxnT72cDo1LcM+K84JmaVWjM8SugeN8g=
 darvaza.org/x/fs v0.3.3 h1:EXMgutKhk0fljRlDCkJb7RrbMJRhyfnO41h7bxchAFs=
 darvaza.org/x/fs v0.3.3/go.mod h1:BJBKXHolO5w7up9jqQLk8iLVtmubjUCx3Qp6K0aw9cg=
+darvaza.org/x/tls v0.2.1 h1:Zuw2LykUHSKlfQw+hlbS8M0RGuL27B5wufTXgY92NxI=
+darvaza.org/x/tls v0.2.1/go.mod h1:ojiB760hB5SJ5710vvgZn25QLTdKBrj0VTYwTaHPQdQ=
 darvaza.org/x/web v0.8.7 h1:DZZZ08b6yI52DnE5dOcxGdyVKPHZTRWSLRSlQXqYERA=
 darvaza.org/x/web v0.8.7/go.mod h1:hPUlDXU8Y03uaS19D+MGW4HBCk+6BWbOYxH4LufF4HM=
 github.com/go-jose/go-jose/v4 v4.0.4 h1:VsjPI33J0SB9vQM6PLmNjoHqMQNGPiZ0rHL7Ni7Q6/E=
