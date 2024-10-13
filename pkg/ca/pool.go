@@ -2,17 +2,17 @@ package ca
 
 import (
 	"context"
-	"crypto/tls"
 	"crypto/x509"
 	"encoding/pem"
+	"io/fs"
 
 	"darvaza.org/core"
-	"darvaza.org/darvaza/shared/storage"
-	"darvaza.org/darvaza/shared/x509utils"
+	"darvaza.org/x/tls"
+	"darvaza.org/x/tls/x509utils"
 )
 
 var (
-	_ storage.Store = (*CA)(nil)
+	_ tls.Store = (*CA)(nil)
 )
 
 // GetCAPool generates a CertPool only including this CA
@@ -47,7 +47,7 @@ func (ca *CA) newCertificate(_ context.Context,
 		return nil, err
 	}
 
-	_ = x509utils.ReadPEM(certPEM, func(_ string, block *pem.Block) bool {
+	_ = x509utils.ReadPEM(certPEM, func(_ fs.FS, _ string, block *pem.Block) bool {
 		crt, err = x509utils.BlockToCertificate(block)
 		return true
 	})
