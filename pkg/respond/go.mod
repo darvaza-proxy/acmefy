@@ -3,7 +3,7 @@ module darvaza.org/acmefy/pkg/respond
 go 1.21
 
 require (
-	darvaza.org/acmefy v0.4.5
+	darvaza.org/acmefy v0.4.6
 	darvaza.org/core v0.15.1 // indirect
 	darvaza.org/x/fs v0.3.3 // indirect
 	darvaza.org/x/tls v0.2.4
