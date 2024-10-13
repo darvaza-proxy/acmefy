@@ -8,7 +8,7 @@ import (
 	"darvaza.org/core"
 	"darvaza.org/darvaza/shared/storage/certpool"
 	"darvaza.org/darvaza/shared/storage/simple"
-	"darvaza.org/darvaza/shared/x509utils"
+	"darvaza.org/x/tls/x509utils"
 )
 
 // CA is a basic Certificate Authority
