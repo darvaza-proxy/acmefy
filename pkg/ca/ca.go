@@ -2,19 +2,19 @@
 package ca
 
 import (
+	"context"
 	"crypto/x509"
+	"errors"
 	"io"
 
-	"darvaza.org/core"
-	"darvaza.org/darvaza/shared/storage/certpool"
-	"darvaza.org/darvaza/shared/storage/simple"
-	"darvaza.org/darvaza/shared/x509utils"
+	"darvaza.org/x/tls/store/basic"
+	"darvaza.org/x/tls/x509utils"
 )
 
 // CA is a basic Certificate Authority
 type CA struct {
 	cfg  Config
-	pool *simple.Store
+	pool *basic.Store
 
 	caKey  x509utils.PrivateKey
 	caCert []*x509.Certificate
@@ -63,30 +63,31 @@ func (ca *CA) validate() bool {
 
 	// confirm the cert uses the given key
 	cert := ca.caCert[0]
-	pub, ok := cert.PublicKey.(x509utils.PublicKey)
-	if ok {
-		ok = pub.Equal(ca.caKey.Public())
-	}
+	ok := x509utils.ValidCertKeyPair(cert, ca.caKey)
 
 	// TODO: validate ca.caCert chain
 	return ok
 }
 
 func (ca *CA) prepare() (*CA, error) {
-	var pb certpool.PoolBuffer
-
-	_ = pb.AddKey("", ca.caKey)
-	for _, c := range ca.caCert {
-		_ = pb.AddCert("", c)
+	s := &basic.Store{
+		OnMissing: ca.onMissing,
 	}
 
-	pool, err := simple.NewFromBuffer(&pb, nil)
-	if err != nil {
-		err = core.Wrap(err, "failed to create certificate store")
-		return nil, err
+	n := len(ca.caCert)
+	if n == 0 {
+		return nil, errors.New("certificates not specified")
 	}
 
-	// done
-	ca.pool = pool
+	ctx := context.Background()
+
+	// trust root
+	_ = s.AddCACerts(ctx, ca.caCert[n-1])
+	// add the rest as intermediate
+	for _, c := range ca.caCert[:n-1] {
+		_ = s.AddCert(ctx, c)
+	}
+
+	ca.pool = s
 	return ca, nil
 }

@@ -2,17 +2,17 @@ package ca
 
 import (
 	"context"
-	"crypto/tls"
 	"crypto/x509"
 	"encoding/pem"
+	"io/fs"
 
 	"darvaza.org/core"
-	"darvaza.org/darvaza/shared/storage"
-	"darvaza.org/darvaza/shared/x509utils"
+	"darvaza.org/x/tls"
+	"darvaza.org/x/tls/x509utils"
 )
 
 var (
-	_ storage.Store = (*CA)(nil)
+	_ tls.Store = (*CA)(nil)
 )
 
 // GetCAPool generates a CertPool only including this CA
@@ -23,7 +23,15 @@ func (ca *CA) GetCAPool() *x509.CertPool {
 // GetCertificate looks for the TLS certificate for a given chi.ServerName,
 // and creates one if it doesn't
 func (ca *CA) GetCertificate(chi *tls.ClientHelloInfo) (*tls.Certificate, error) {
-	return ca.pool.GetCertificateWithCallback(chi, ca.newCertificate)
+	return ca.pool.GetCertificate(chi)
+}
+
+func (ca *CA) onMissing(ctx context.Context, name string) (*tls.Certificate, error) {
+	cert, err := ca.newCertificate(ctx, ca.caKey, name)
+	if err == nil {
+		err = ca.pool.Put(ctx, cert)
+	}
+	return cert, err
 }
 
 func (ca *CA) newCertificate(_ context.Context,
@@ -47,7 +55,7 @@ func (ca *CA) newCertificate(_ context.Context,
 		return nil, err
 	}
 
-	_ = x509utils.ReadPEM(certPEM, func(_ string, block *pem.Block) bool {
+	_ = x509utils.ReadPEM(certPEM, func(_ fs.FS, _ string, block *pem.Block) bool {
 		crt, err = x509utils.BlockToCertificate(block)
 		return true
 	})
