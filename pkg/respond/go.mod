@@ -14,8 +14,8 @@ require github.com/go-jose/go-jose/v4 v4.0.4
 
 require (
 	github.com/gobwas/glob v0.2.3 // indirect
-	golang.org/x/net v0.30.0 // indirect
-	golang.org/x/text v0.19.0 // indirect
+	golang.org/x/net v0.31.0 // indirect
+	golang.org/x/text v0.20.0 // indirect
 )
 
 replace darvaza.org/acmefy => ../../
