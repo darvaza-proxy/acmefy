@@ -11,7 +11,7 @@ import (
 	"time"
 
 	"darvaza.org/core"
-	"darvaza.org/darvaza/shared/x509utils"
+	"darvaza.org/x/tls/x509utils"
 )
 
 // KeyAlgorithm specifies the algorithm to use when generating a Private Key

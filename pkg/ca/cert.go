@@ -6,7 +6,7 @@ import (
 	"crypto/x509"
 
 	"darvaza.org/core"
-	"darvaza.org/darvaza/shared/x509utils"
+	"darvaza.org/x/tls/x509utils"
 )
 
 // revive:disable:flag-parameter
@@ -27,9 +27,11 @@ func (ca *CA) NewKeyCertPair(clientAuth bool,
 	}
 
 	pub := key.Public()
-	keyPEM = x509utils.EncodePKCS8PrivateKey(key)
+	keyPEM, err = x509utils.EncodePKCS8PrivateKey(key)
+	if err == nil {
+		certPEM, err = ca.CreateCertificate(tpl, pub)
+	}
 
-	certPEM, err = ca.CreateCertificate(tpl, pub)
 	if err != nil {
 		return nil, nil, err
 	}
