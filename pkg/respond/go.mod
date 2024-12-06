@@ -4,9 +4,9 @@ go 1.21
 
 require (
 	darvaza.org/acmefy v0.4.6
-	darvaza.org/core v0.15.2 // indirect
+	darvaza.org/core v0.15.3 // indirect
 	darvaza.org/x/fs v0.3.4 // indirect
-	darvaza.org/x/tls v0.2.4
+	darvaza.org/x/tls v0.4.1
 	darvaza.org/x/web v0.9.2
 )
 
