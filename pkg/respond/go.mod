@@ -5,9 +5,9 @@ go 1.21
 require (
 	darvaza.org/acmefy v0.4.6
 	darvaza.org/core v0.15.4 // indirect
-	darvaza.org/x/fs v0.3.4 // indirect
+	darvaza.org/x/fs v0.3.7 // indirect
 	darvaza.org/x/tls v0.4.3
-	darvaza.org/x/web v0.9.2
+	darvaza.org/x/web v0.9.4
 )
 
 require github.com/go-jose/go-jose/v4 v4.0.4
