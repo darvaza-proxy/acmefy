@@ -4,10 +4,10 @@ go 1.22
 
 require (
 	darvaza.org/acmefy v0.4.6
-	darvaza.org/core v0.15.6 // indirect
-	darvaza.org/x/fs v0.3.8 // indirect
-	darvaza.org/x/tls v0.4.5
-	darvaza.org/x/web v0.9.6
+	darvaza.org/core v0.16.0 // indirect
+	darvaza.org/x/fs v0.4.0 // indirect
+	darvaza.org/x/tls v0.5.0
+	darvaza.org/x/web v0.10.0
 )
 
 require github.com/go-jose/go-jose/v4 v4.0.4
