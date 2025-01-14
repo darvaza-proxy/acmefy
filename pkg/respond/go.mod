@@ -1,6 +1,6 @@
 module darvaza.org/acmefy/pkg/respond
 
-go 1.21
+go 1.22
 
 require (
 	darvaza.org/acmefy v0.4.6
