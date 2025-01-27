@@ -1,17 +1,17 @@
 module darvaza.org/acmefy/pkg/ca
 
-go 1.21
+go 1.22
 
 require (
 	darvaza.org/acmefy v0.4.6
 	darvaza.org/acmefy/pkg/respond v0.2.2
-	darvaza.org/core v0.15.6
-	darvaza.org/darvaza/shared v0.6.2
-	darvaza.org/slog v0.5.14 // indirect
-	darvaza.org/slog/handlers/discard v0.4.15 // indirect
-	darvaza.org/x/fs v0.3.7 // indirect
-	darvaza.org/x/tls v0.4.3 // indirect
-	darvaza.org/x/web v0.9.4 // indirect
+	darvaza.org/core v0.16.0
+	darvaza.org/darvaza/shared v0.7.0
+	darvaza.org/slog v0.6.0 // indirect
+	darvaza.org/slog/handlers/discard v0.5.0 // indirect
+	darvaza.org/x/fs v0.4.0 // indirect
+	darvaza.org/x/tls v0.5.0 // indirect
+	darvaza.org/x/web v0.10.0 // indirect
 )
 
 require (
