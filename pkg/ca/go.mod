@@ -3,8 +3,8 @@ module darvaza.org/acmefy/pkg/ca
 go 1.22
 
 require (
-	darvaza.org/acmefy v0.4.6
-	darvaza.org/acmefy/pkg/respond v0.2.2
+	darvaza.org/acmefy v0.4.7
+	darvaza.org/acmefy/pkg/respond v0.2.3
 	darvaza.org/core v0.16.1
 	darvaza.org/darvaza/shared v0.7.0
 	darvaza.org/slog v0.6.1 // indirect
