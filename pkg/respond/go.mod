@@ -1,6 +1,6 @@
 module darvaza.org/acmefy/pkg/respond
 
-go 1.22
+go 1.25.0
 
 require (
 	darvaza.org/acmefy v0.4.6
@@ -14,8 +14,8 @@ require github.com/go-jose/go-jose/v4 v4.0.5
 
 require (
 	github.com/gobwas/glob v0.2.3 // indirect
-	golang.org/x/net v0.35.0 // indirect
-	golang.org/x/text v0.22.0 // indirect
+	golang.org/x/net v0.55.0 // indirect
+	golang.org/x/text v0.37.0 // indirect
 )
 
 replace darvaza.org/acmefy => ../../
