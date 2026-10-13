@@ -1,6 +1,6 @@
 module darvaza.org/acmefy/pkg/ca
 
-go 1.22
+go 1.24.0
 
 require (
 	darvaza.org/acmefy v0.4.6
@@ -15,7 +15,7 @@ require (
 )
 
 require (
-	github.com/go-jose/go-jose/v4 v4.0.5 // indirect
+	github.com/go-jose/go-jose/v4 v4.1.4 // indirect
 	github.com/gobwas/glob v0.2.3 // indirect
 	github.com/klauspost/cpuid/v2 v2.2.9 // indirect
 	github.com/zeebo/blake3 v0.2.4 // indirect
